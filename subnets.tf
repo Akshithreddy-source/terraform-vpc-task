@@ -13,7 +13,7 @@ resource "aws_subnet" "private" {
   cidr_block = var.private_subnet_cidr
 
   tags = {
-    Name = "private-subnet"
+    Name = "my-private-subnet"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "my-igw"
+    Name = "igw-1"
   }
 }
 
@@ -33,6 +33,6 @@ resource "aws_nat_gateway" "nat" {
   subnet_id     = aws_subnet.public.id
 
   tags = {
-    Name = "my-nat"
+    Name = "nat-1"
   }
 }
